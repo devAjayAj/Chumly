@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#955fcc</color>-->
+    <!--<color name="colorPrimaryDark">#704799</color>-->
+
+
+    <!--PurPink
+    <color name="colorPrimary">#e100ff</color>
+    <color name="colorPrimaryDark">#7f00ff</color>-->
+
+    <!--Coral Orange
+    <color name="colorPrimary">#ff9966</color>
+    <color name="colorPrimaryDark">#ff5e62</color>-->
+
+    <color name="colorPrimary">#3498DB</color>
+    <color name="colorPrimaryDark">#2980b9</color>
+    <color name="translucentPrimaryDark">#8C2980b9</color>
+    <color name="tabTextTint">#97c8e8</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="black">#000000</color>
+    <color name="colorAccent">#c8e8ff</color>
+</resources>
