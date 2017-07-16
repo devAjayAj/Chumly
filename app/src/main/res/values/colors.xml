@@ -14,7 +14,7 @@
 
     <color name="colorPrimary">#3498DB</color>
     <color name="colorPrimaryDark">#2980b9</color>
-    <color name="translucentPrimaryDark">#8C2980b9</color>
+    <color name="translucentPrimaryDarkForCard">#8C2980b9</color>
     <color name="tabTextTint">#97c8e8</color>
 
     <color name="textColorPrimary">#FFFFFF</color>

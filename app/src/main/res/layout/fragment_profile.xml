@@ -14,8 +14,8 @@
         android:layout_height="0dp"
         android:layout_margin="0dp"
         android:layout_weight="0.15"
-        android:background="@color/colorPrimary"
         android:gravity="center"
+        android:background="@color/colorPrimary"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -29,7 +29,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:text="Rahul K"
             android:textAllCaps="true"
             android:textColor="@color/textColorPrimary"
@@ -265,6 +264,11 @@
             app:stl_titleOffset="24dp"
             app:stl_underlineColor="#4D000000"
             app:stl_underlineThickness="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark"/>
 
         <com.ajad.chumly.CustomViewPager
             android:id="@+id/viewpagerprofiletab"

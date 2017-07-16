@@ -1,11 +1,13 @@
 package com.ajad.chumly;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,8 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 public class ProfileFragment extends Fragment {
 
     Boolean isFragmentLoadedOnce = false;
+    ImageView tabIcon;
+    CardView cardView;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -75,7 +79,7 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
-        SmartTabLayout viewPagerTab = getView().findViewById(R.id.viewpagertabprofiletab);
+        final SmartTabLayout viewPagerTab = getView().findViewById(R.id.viewpagertabprofiletab);
         viewPagerTab.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimary));
         FragmentPagerItems pages = FragmentPagerItems.with(getActivity())
                 .add("Profile", AttendanceFragment.class)
@@ -91,19 +95,19 @@ public class ProfileFragment extends Fragment {
         viewPagerTab.setCustomTabView(new SmartTabLayout.TabProvider() {
             @Override
             public View createTabView(ViewGroup container, int position, PagerAdapter adapter) {
-                View itemView = inflater.inflate(R.layout.custom_tabs_icons_profilefragment, container, false);
-                TextView text = (TextView) itemView.findViewById(R.id.custom_tab_text);
-                text.setText(adapter.getPageTitle(position));
+                View itemView = inflater.inflate(R.layout.layout_tabs_icons_profilefragment, container, false);
+//                TextView text = (TextView) itemView.findViewById(R.id.custom_tab_text);
+//                text.setText(adapter.getPageTitle(position));
                 ImageView icon = (ImageView) itemView.findViewById(R.id.custom_tab_icon);
                 switch (position) {
                     case 0:
-                        icon.setImageDrawable(res.getDrawable(R.mipmap.ic_launcher_round));
+                        icon.setImageDrawable(res.getDrawable(R.drawable.ic_account_circle_white_24dp));
                         break;
                     case 1:
-                        icon.setImageDrawable(res.getDrawable(R.mipmap.ic_launcher_round));
+                        icon.setImageDrawable(res.getDrawable(R.drawable.ic_info_outline_white_24dp));
                         break;
                     case 2:
-                        icon.setImageDrawable(res.getDrawable(R.mipmap.ic_launcher_round));
+                        icon.setImageDrawable(res.getDrawable(R.drawable.ic_question_answer_white_24dp));
                         break;
                     default:
                         throw new IllegalStateException("Invalid position: " + position);
@@ -112,11 +116,36 @@ public class ProfileFragment extends Fragment {
                 return itemView;
             }
         });
-        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
+        final FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getChildFragmentManager(), pages);
 
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(3);
         viewPagerTab.setViewPager(viewPager);
+
+        viewPagerTab.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int count = adapter.getCount();
+                //Display all tabs cardView with transparent bg in profileFragment
+                for (int i = 0; i < count; i++) {
+                    cardView = viewPagerTab.getTabAt(i).findViewById(R.id.custom_cv_profile);
+                    cardView.setCardBackgroundColor(Color.TRANSPARENT);
+                }
+                //To Display the selected tab CARD VIEW with dark bg
+                cardView = viewPagerTab.getTabAt(position).findViewById(R.id.custom_cv_profile);
+                cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(), R.color.translucentPrimaryDarkForCard));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 }

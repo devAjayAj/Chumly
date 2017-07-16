@@ -4,9 +4,11 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@drawable/custom_tab_background_forprofile"
-    android:gravity="center"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:paddingBottom="12dp"
+    android:paddingTop="4dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -14,7 +16,8 @@
         app:cardCornerRadius="16dp"
         android:layout_margin="0dp"
         app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/translucentPrimaryDark">
+        android:id="@+id/custom_cv_profile"
+        android:background="@android:color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +30,7 @@
                 android:layout_height="24dp"
                 android:scaleType="fitCenter" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/custom_tab_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,7 +38,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold" />-->
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
