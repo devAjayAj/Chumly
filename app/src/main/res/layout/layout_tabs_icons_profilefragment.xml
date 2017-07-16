@@ -17,7 +17,7 @@
         android:layout_margin="0dp"
         app:cardElevation="0dp"
         android:id="@+id/custom_cv_profile"
-        android:background="@android:color/transparent">
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="match_parent"
