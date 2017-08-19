@@ -82,9 +82,9 @@ public class ProfileFragment extends Fragment {
         final SmartTabLayout viewPagerTab = getView().findViewById(R.id.viewpagertabprofiletab);
         viewPagerTab.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimary));
         FragmentPagerItems pages = FragmentPagerItems.with(getActivity())
-                .add("Profile", AttendanceFragment.class)
-                .add("Inbox", AttendanceFragment.class)
-                .add("GroupChat", AttendanceFragment.class)
+                .add("Attendance", AttendanceFragment.class)
+                .add("Subject Performance", SubPerformanceFragment.class)
+                .add("Details", InstitutionDetailsFragment.class)
                 .create();
 
         ViewPager viewPager = getView().findViewById(R.id.viewpagerprofiletab);

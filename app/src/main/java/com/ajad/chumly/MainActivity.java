@@ -25,14 +25,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Profile", ProfileFragment.class)
                 .add("Inbox", InboxFragment.class)
+                .add("Profile", ProfileFragment.class)
                 .add("Group", GroupChatFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(1, true);
         final SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
         final LayoutInflater inflater = LayoutInflater.from(this);
         final Resources res = getResources();
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        viewPagerTab.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        viewPagerTab.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
         viewPagerTab.setViewPager(viewPager);
     }
 

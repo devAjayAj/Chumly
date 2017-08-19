@@ -8,6 +8,27 @@
     android:weightSum="0.4"
     tools:context="com.ajad.chumly.ProfileFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inboxicon"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_question_answer_white_24dp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,24 +41,25 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/textView"
-            android:layout_width="108dp"
-            android:layout_height="108dp"
+            android:layout_width="124dp"
+            android:layout_height="124dp"
             android:src="@drawable/student"
             app:civ_border_color="@color/textColorPrimary"
-            app:civ_border_width="2dp" />
+            app:civ_border_width="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rahul K"
             android:textAllCaps="true"
+            android:textStyle="bold"
             android:textColor="@color/textColorPrimary"
             android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="2dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -63,6 +85,13 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABC Mat. Hr. Sec. School"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -270,11 +299,20 @@
             android:layout_height="2dp"
             android:background="@color/colorPrimaryDark"/>
 
-        <com.ajad.chumly.CustomViewPager
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
             android:id="@+id/viewpagerprofiletab"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/wallback"
             android:layout_below="@id/viewpagertab" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+        </FrameLayout>
     </LinearLayout>
 
 
@@ -379,7 +417,7 @@
             android:layout_weight="0.27"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.CardView
+            <android.supplay services battery drainport.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="8dp"
