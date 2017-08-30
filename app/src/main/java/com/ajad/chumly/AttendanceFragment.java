@@ -1,13 +1,17 @@
 package com.ajad.chumly;
 
 
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 
 /**
@@ -15,6 +19,8 @@ import android.view.ViewGroup;
  */
 public class AttendanceFragment extends Fragment {
 
+
+    CardView cardView;
 
     public AttendanceFragment() {
         // Required empty public constructor
@@ -25,6 +31,9 @@ public class AttendanceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        SmartTabLayout viewPagerTab = getActivity().findViewById(R.id.viewpagertabprofiletab);
+        cardView = viewPagerTab.getTabAt(0).findViewById(R.id.custom_cv_profile);
+        cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(), R.color.translucentPrimaryDarkForCard));
         return inflater.inflate(R.layout.fragment_attendence, container, false);
     }
 

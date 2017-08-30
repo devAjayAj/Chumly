@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
-    android:orientation="vertical"
     tools:context="com.ajad.chumly.GroupChatFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/chat_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +59,14 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ScrollView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ChatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        ></android.support.v7.widget.RecyclerView>
+
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_weight="20"
         android:layout_height="wrap_content">
@@ -71,16 +86,35 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView3ads"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/userlogin" />
+
+                <ImageView
+                    android:id="@+id/imageView1sad"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="-15dp"
+                    android:layout_marginTop="6.5dp"
+                    android:src="@drawable/arrow_bg2" />
+
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="6"
+                    android:layout_marginTop="6dp"
                     android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/rounded_corner"
                     android:padding="16dp"
-                    android:text="Rahul:\nHello Friends, I want to know the answer for the following questions and where is it located in the book\n1.Shape with 4 equal sides\n2.Shape with 4 sides unequal\n3.Shape with 3 sides"
+                    android:text="Hi"
                     android:textColor="#FFF" />
 
                 <ImageView
@@ -89,16 +123,22 @@
                     android:layout_height="30dp"
                     android:layout_marginLeft="-15dp"
                     android:layout_marginTop="8.8dp"
-                    android:layout_weight="1"
+                    android:visibility="gone"
                     android:src="@drawable/arrow_bg1" />
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="0dp"
-                    android:layout_weight="3"
+                    android:visibility="gone"
                     android:src="@drawable/student" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></View>
 
             </LinearLayout>
 
@@ -218,7 +258,7 @@
                     android:textColor="#000" />
             </LinearLayout>
         </RelativeLayout>
-    </ScrollView>
+    </ScrollView>-->
 
     <include
         layout="@layout/type_message_area"
@@ -226,4 +266,5 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="bottom" />
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

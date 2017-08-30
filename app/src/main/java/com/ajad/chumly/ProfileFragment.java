@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Inflate the layout for this fragment
         //Set tab TEXT and ICON to white as this is the default tab
         SmartTabLayout viewPagerTab = getActivity().findViewById(R.id.viewpagertab);
         TextView view = (TextView) viewPagerTab.getTabAt(0).findViewById(R.id.custom_tab_text);
@@ -124,6 +124,7 @@ public class ProfileFragment extends Fragment {
         viewPagerTab.setViewPager(viewPager);
 
         viewPagerTab.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
